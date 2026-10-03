@@ -1,0 +1,29 @@
+# Entornos virtuales
+venv/
+env/
+.venv/
+
+# Archivos compilados de Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Entornos de desarrollo (IDEs)
+.vscode/
+.idea/
+*.swp
+*Zone.Identifier
+
+# Archivos temporales generados por LaTeX (si compiláis la memoria en local)
+*.aux
+*.log
+*.out
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.toc
