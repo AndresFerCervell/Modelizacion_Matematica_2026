@@ -5,6 +5,9 @@ Repositorio del equipo para la resolución de los retos matemáticos y algorítm
 Sirve como solución al Concurso de Modelización Matemática (CMM-IMI). Edición 2026
 El enunciado se especifica en el archivo `Lo_que_arde.pdf`. 
 
+Más información sobre el concurso se puede encontrar aquí:
+https://blogs.mat.ucm.es/cmm/edicion-2026/
+
 ## Archivos
 `data`. Conjunto de ejemplos de uso proporcionados por la organización.
 
