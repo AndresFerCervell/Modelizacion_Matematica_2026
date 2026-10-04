@@ -1,10 +1,11 @@
 import networkx as nx
 import matplotlib.pyplot as plt
 
-def leer_grafo(ruta_archivo, probabilidades_inicio=None):
+def leer_grafo(ruta_archivo, probabilidades_inicio=None, peso_unitario=False):
     """
     Lee el listado de arcos con sus probabilidades y crea un DiGraph de NetworkX.
     Formato esperado por línea: origen destino probabilidad (ej: '12 18 0.6155')
+    Si peso_unitario=True (Reto 2, p_ij = 1) se ignora la probabilidad y todo arco pesa 1.
     """
     G = nx.DiGraph()
     
@@ -27,7 +28,7 @@ def leer_grafo(ruta_archivo, probabilidades_inicio=None):
                 try:
                     origen = int(partes[0])
                     destino = int(partes[1])
-                    peso = float(partes[2].replace(',', '.')) # Soporta comas o puntos
+                    peso = 1.0 if peso_unitario else float(partes[2].replace(',', '.')) # Soporta comas o puntos
                     
                     if peso > 0:
                         G.add_edge(origen, destino, weight=peso)
@@ -43,8 +44,8 @@ def dibujar_grafo(G):
     """
     plt.figure(figsize=(10, 8))
     
-    # Posicionamiento de los nodos
-    pos = nx.spring_layout(G, seed=42) # Semilla fija 
+    # Layout (posicionamiento de los nodos)
+    pos = nx.spring_layout(G, seed=42) # Semilla fija para consistencia visual
     
     # Colores: Rojo si está quemado, Azul claro si no
     colores_nodos = ['red' if G.nodes[n].get('quemado', False) else 'lightblue' for n in G.nodes()]
