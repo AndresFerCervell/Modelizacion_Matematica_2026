@@ -96,3 +96,34 @@ class IncendioSimulator:
             "total_quemados": len(self.Q_t),
             "zonas_salvadas": self.G.number_of_nodes() - len(self.Q_t)
         }
+
+
+    def simular_episodio(self, nodo_inicio, k=0, heuristica=None):
+            """
+            Ejecuta una simulación completa hasta que el fuego se apaga.
+            
+            Args:
+                nodo_inicio (int): El nodo donde empieza el fuego.
+                k (int): Número de aristas que pueden cortar los bomberos por etapa.
+                heuristica (callable): Función que recibe (G, I_t, Q_t) y devuelve una arista (u, v) a cortar.
+                
+            Returns:
+                int: Número total de zonas quemadas al terminar el incendio.
+            """
+            self.iniciar_incendio(nodo_inicio)
+            
+            # Mientras el fuego siga activo en esta etapa
+            while len(self.I_t) > 0:
+                
+                # Turno de los bomberos: actúan si hay k > 0 y tienen una estrategia
+                if k > 0 and heuristica is not None:
+                    for _ in range(k):
+                        # La heurística decide la mejor arista viendo el estado actual
+                        arista = heuristica(self.G, self.I_t, self.Q_t)
+                        if arista:
+                            self.bomberos_cortar_arista(arista[0], arista[1])
+                
+                # Turno del fuego: avanza según las probabilidades
+                self.pasar_turno()
+                
+            return len(self.Q_t)
