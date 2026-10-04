@@ -181,7 +181,7 @@ if __name__ == "__main__":
     for t, cortes in enumerate(plan):
         print(f"  Etapa {t}: cortar {cortes}")
 
-    dibujar_evolucion(ruta_007, plan, q=1, guardar="evolucion_graph_007.png", mostrar=True)
+    dibujar_evolucion("data/graph_007_probs.txt", plan, q=1, guardar="evolucion_graph_007.png", mostrar=True)
 
     print("\n2. SOLUCIÓN APROXIMADA (Greedy)")
        
