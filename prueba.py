@@ -2,7 +2,7 @@ from core import leer_grafo, dibujar_grafo
 from engine import IncendioSimulator
 
 # 1. Leer datos
-grafo_base = leer_grafo("data/graph_007_probs.txt")
+grafo_base = leer_grafo("data/graph_004_probs.txt")
 
 # 2. Inicializar simulador (con semilla para reproducibilidad)
 sim = IncendioSimulator(grafo_base, semilla=12345)
