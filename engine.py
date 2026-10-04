@@ -81,9 +81,6 @@ class IncendioSimulator:
         """
         if self.G.has_edge(u, v):
             self.G.remove_edge(u, v)
-            # Nota para la memoria: Como el modelo indica que (i,j) y (j,i) pueden tener p_ij distintas,
-            # los bomberos aquí cortan una arista dirigida. Si un cortafuegos real corta ambos sentidos,
-            # deberíais llamar a este método también con (v, u).
             return True
         return False
         

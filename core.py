@@ -43,8 +43,8 @@ def dibujar_grafo(G):
     """
     plt.figure(figsize=(10, 8))
     
-    # Layout (posicionamiento de los nodos)
-    pos = nx.spring_layout(G, seed=42) # Semilla fija para consistencia visual
+    # Posicionamiento de los nodos
+    pos = nx.spring_layout(G, seed=42) # Semilla fija 
     
     # Colores: Rojo si está quemado, Azul claro si no
     colores_nodos = ['red' if G.nodes[n].get('quemado', False) else 'lightblue' for n in G.nodes()]

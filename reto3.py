@@ -37,13 +37,13 @@ def resolver_reto3(ruta_grafo, q=1, k=1, num_simulaciones=1000):
     """
     Ejecuta el experimento Montecarlo para calcular las zonas salvadas.
     """
-    # Fijamos la semilla maestra para las condiciones experimentales
+    # Fijamos la semilla para las condiciones experimentales
     random.seed(42)
     semillas_simulacion = [random.randint(0, 999999) for _ in range(num_simulaciones)]
     
     grafo_base = leer_grafo(ruta_grafo)
     
-    # FASE 1: Baseline (Fuego sin intervención de los bomberos)
+    # FASE 1: Fuego sin intervención de los bomberos
     quemados_sin_bomberos = 0
     for semilla in semillas_simulacion:
         
@@ -53,6 +53,7 @@ def resolver_reto3(ruta_grafo, q=1, k=1, num_simulaciones=1000):
     media_sin_bomberos = quemados_sin_bomberos / num_simulaciones
     
     # FASE 2: Intervención Greedy 
+    quemados_con_bomberos = 0
     for semilla in semillas_simulacion:
         sim = IncendioSimulator(grafo_base, semilla=semilla)
         quemados_con_bomberos += sim.simular_episodio(nodo_inicio=q, k=k, heuristica=elegir_cortafuegos_reto3)
@@ -67,6 +68,12 @@ def resolver_reto3(ruta_grafo, q=1, k=1, num_simulaciones=1000):
     print(f"Quemados medios (Con Greedy)  : {media_con_bomberos:.2f} zonas")
     print(f"ZONAS SALVADAS ESPERADAS      : {zonas_salvadas:.2f} zonas\n")
 
-# Ejecución para probar con un grafo 
+# Ejecución para probar 
 if __name__ == "__main__":
+    resolver_reto3("data/graph_003_probs.txt", q=1, k=1, num_simulaciones=1000)
+    resolver_reto3("data/graph_004_probs.txt", q=1, k=1, num_simulaciones=1000)
+    resolver_reto3("data/graph_005_probs.txt", q=1, k=1, num_simulaciones=1000)
+    resolver_reto3("data/graph_007_probs.txt", q=1, k=1, num_simulaciones=1000)
+    resolver_reto3("data/graph_008_probs.txt", q=1, k=1, num_simulaciones=1000)
     resolver_reto3("data/graph_010_probs.txt", q=1, k=1, num_simulaciones=1000)
+    
