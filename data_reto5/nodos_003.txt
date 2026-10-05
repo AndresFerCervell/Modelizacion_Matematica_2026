@@ -1,0 +1,23 @@
+# nodo tipo personas biodiversidad velocidad
+# personas y biodiversidad en % (0-100, no tienen que sumar 100)
+# velocidad: fracción de la zona que se quema por hora
+0 reserva 3 81 0.65
+1 secano 5 9 0.70
+2 pueblo 47 28 0.36
+3 bosque 3 30 0.49
+4 pueblo 69 25 0.27
+5 bosque 7 39 0.46
+6 secano 0 4 0.73
+7 reserva 2 83 0.60
+8 ciudad 90 3 0.17
+9 pueblo 41 21 0.39
+10 ciudad 94 2 0.20
+11 bosque 5 57 0.53
+12 secano 4 1 0.74
+13 secano 3 6 0.74
+14 secano 1 5 0.79
+15 bosque 0 37 0.63
+16 reserva 4 80 0.46
+17 pueblo 62 28 0.34
+18 bosque 4 44 0.55
+19 secano 4 3 0.76

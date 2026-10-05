@@ -1,0 +1,12 @@
+# tipo fuerza duracion t_listo t_recarga rango base
+# fuerza: fracción de zona/hora que anula al fuego
+# duracion: horas que dura una descarga (solo aéreos)
+# t_listo: horas hasta estar listo tras el inicio del incendio
+# t_recarga: horas entre descargas (solo aéreos)
+# rango: saltos máximos desde la base (-1 = sin límite)
+# base: zona de la estación base (-1 = ninguna)
+terrestre 0.51 0.0 5.05 0.0 2 13
+terrestre 0.55 0.0 5.46 0.0 2 17
+terrestre 0.49 0.0 5.05 0.0 2 11
+aereo 1.52 1.0 2.51 1.91 -1 -1
+aereo 1.63 1.0 2.31 2.1 -1 -1
